@@ -1,36 +1,68 @@
-window.onload = function () {
+var word = $("#enterWord #word-field");
+var answerArray = [];
+var secretWord = "";
+var guessArray = [];
+var wordLength = 0;
 
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-    var buttonsContainer = document.getElementById('buttons-container');
-    for (var i = 0; i < alphabet.length; i++) {
-        var letter = alphabet[i];
-        var button = document.createElement('button');
-        button.innerText = letter;
-        button.className = 'button';
-        button.addEventListener('click', function () {
-            handleButtonClick(letter);
-        });
-        buttonsContainer.appendChild(button);
+function getWord() {
+    secretWord = word.val();
+    letters = secretWord.split('');
+    for (i = 0; i < letters.length; i++) {
+        $(".dashes span").text(letters.length);
+        answerArray[i] = " _ ";
+        $(".dashes div").append(answerArray[i]);
     }
+}
 
-    function handleButtonClick(letter) {
+function letterGuess() {
+    guess = $(this).attr('id');
+    guessArray.push(guess);
+    guessCount = guessArray.length;
+    var matches = letters.includes(guess);
+    if (matches) {
+        $(".dashes div").html(underscoreify(secretWord, guessArray));
+    }   else if (guessCount == 1) {
+        $("img").attr("src", "");
+    }   else if (guessCount == 2) {
+        $("img").attr("src", "");
+    }   else if (guessCount == 3) {
+        $("img").attr("src", "");
+    }   else if (guessCount == 4) {
+        $("img").attr("src", "");
+    }   else if (guessCount == 5) {
+        $("img").attr("src", "");
+    }   else {
+        $("img").attr("src", "");
+        alert("Game Over");
     }
+}
 
-    play = function () {
-
-        word = word.replace(/\s/g, "-");
-        console.log(word);
-        buttons();
-        geusses = [ ];
-        lives = 10;
-        counter = 0;
-        space = 0;
-        result();
-        comments();
-        selectCat();
-        canvas();
+function underscoreify(word, guesses) {
+    var underscores = "";
+    for (var i = 0; i < word.length; i++) {
+        if (guesses.includes(word[i])) {
+            underscores = underscores + word[i];
+        } else {
+            underscores = underscores + "_";
+        }
     }
+    return underscores;
+}
+
+$("#enterWord #submit-word").on("click", function(e) {
+    e.preventDefault()
+    getWord();
+    $("#enterWord #word-field").hide();
+    $("#enterWord #submit-word").hide();
+    $("#playerOne h2").hide();
+});
+
+$(".alpha").children().on("click", letterGuess);
+$(".alpha").on("click", function(e) {
+    e.preventDefault();
+    console.log(e);
+});
+
+function versucheUebrig() {
+
 }

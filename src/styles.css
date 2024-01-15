@@ -1,26 +1,64 @@
-h1 {
-    color: red;
-}
-
 body {
-    background-color: aquamarine;
+    font-family: 'Covered By Your Grace', cursive;
+    margin: 0 110px 0 110px;
+    text-align: center;
+    background-color: white;
+    background-size: cover;
 }
 
-button {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #3498db;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: #fff;
-    transition: background-color 0.3s;
+#container {
+    display: flex;
+    align-items: center;
 }
-button:hover {
-    background-color: red;
+
+#playerOne {
+    width: 30%;
+    order: 2;
+    padding: 30px;
+}
+
+#playerTwo {
+    width: 50%;
+    order: 3;
+    padding: 30px;
+}
+
+span {
+    font-size: 45px;
+    padding: 10px;
+}
+
+#word-field, #submit-word {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.dashes span {
+    color: #000000;
+    font-size: 40px;
+}
+
+.dashes div {
+    margin: 20px;
+    font-size: 60px;
+    font-family: 'Bangers', serif;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: rgb(128,0,0);
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px 15px 0 15px;
 }
