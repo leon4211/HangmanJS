@@ -45,13 +45,13 @@ span {
 }
 
 a:hover {
-    text-decoration: none;
     background-color: rgb(128,0,0);
 }
 
 h1 {
     font-size: 60px;
     font-weight: bold;
+    color: red;
 }
 
 h2 {

@@ -2,7 +2,6 @@ var word = $("#enterWord #word-field");
 var answerArray = [];
 var secretWord = "";
 var guessArray = [];
-var wordLength = 0;
 
 function getWord() {
     secretWord = word.val();
@@ -33,7 +32,7 @@ function letterGuess() {
         $("img").attr("src", "");
     }   else {
         $("img").attr("src", "");
-        alert("Game Over");
+        alert("Spieler 1 hat gewonnen!");
     }
 }
 
@@ -43,7 +42,7 @@ function underscoreify(word, guesses) {
         if (guesses.includes(word[i])) {
             underscores = underscores + word[i];
         } else {
-            underscores = underscores + "_";
+            underscores = underscores + " _ ";
         }
     }
     return underscores;
@@ -58,10 +57,6 @@ $("#enterWord #submit-word").on("click", function(e) {
 });
 
 $(".alpha").children().on("click", letterGuess);
-$(".alpha").on("click", function(e) {
-    e.preventDefault();
-    console.log(e);
-});
 
 function versucheUebrig() {
 
