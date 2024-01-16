@@ -23,7 +23,7 @@ body {
     padding: 30px;
 }
 
-span {
+p1 {
     font-size: 45px;
     padding: 10px;
 }
@@ -43,6 +43,7 @@ span {
     font-size: 60px;
     font-family: 'Bangers', serif;
 }
+
 
 a:hover {
     background-color: rgb(128,0,0);

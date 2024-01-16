@@ -31,7 +31,6 @@ function letterGuess() {
     }   else if (guessCount == 5) {
         $("img").attr("src", "");
     }   else {
-        $("img").attr("src", "");
         alert("Spieler 1 hat gewonnen!");
     }
 }
@@ -47,6 +46,7 @@ function underscoreify(word, guesses) {
     }
     return underscores;
 }
+
 
 $("#enterWord #submit-word").on("click", function(e) {
     e.preventDefault()
